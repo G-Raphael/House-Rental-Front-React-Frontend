@@ -45,8 +45,8 @@ const instance = axios.create(
 
 function Signup({ showSignUp, clickeventIn, showConfirmation }) {
     // I used http://localhost:9000 for testing, please replace it with our Hiroku address.
-    // const url='https://ict-yep.herokuapp.com/api/v1/users'
-    const url = "http://localhost:9000/api/v1/users"
+    const url = 'https://ict-yep.herokuapp.com/api/v1/users'
+    //const url = "http://localhost:9000/api/v1/users"
    
     const [showPassword, setShowPassword] = useState(false)
     const [firstName, setFirstName] = useState('')

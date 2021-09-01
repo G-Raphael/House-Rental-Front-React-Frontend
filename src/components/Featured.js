@@ -1,6 +1,6 @@
 import {React,useEffect,useState} from 'react'
-import ReactPagenate from 'react-paginate'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+//import ReactPagenate from 'react-paginate'
+//import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import axios from 'axios'
 import './Featured.css'
 import Card from '../components/Card';

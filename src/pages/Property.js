@@ -41,11 +41,13 @@ function Property() {
         
        
     }
-    
+   
     useEffect(() => {
+        
         getProperty()
         
-    },[])
+       // eslint-disable-next-line  
+    },[id])
    //const [isShowMore,setIsShowMore] = useState(false)
     return (
         <div >

@@ -57,7 +57,10 @@ function SignIn({ showSignIn, clickeventUp,setIsShowSigIn }) {
         }
         else {
             try {
-               const response = await axios.post(url, {
+              const headers ={  "Content-Type": "application/json; charset=utf-8; text/plain", 
+              "Access-Control-Allow-Origin" : "*",
+              "Access-Control-Allow-Methods":"GET,PUT,POST,DELETE,PATCH,OPTIONS",}
+               const response = await axios.post(url,{headers:headers}, {
                 email, password
             })
             console.log(response)

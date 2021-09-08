@@ -20,10 +20,6 @@
     width: 83.5% !important;
     height: 6.25rem;
     margin: 0 7.5rem !important;
-
-    width: 83.33rem;
-    height: 6.25rem;
-    margin: 0 7.5rem;
     background-color: #fff;
     opacity: 0.6;
     display: flex;
@@ -72,13 +68,6 @@
     grid-template-rows: 0fr 0fr !important;
     gap: 1.1%;
 
-      display: grid;
-      width: 83.33%;
-      margin-bottom: 5.06rem;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      /* grid-template-rows: 1fr 1fr; */
-   gap: 4.2rem;
-
    
 }
 .paginationButtons{
@@ -112,4 +101,10 @@
     background-color: #919EAB;
     opacity: 0.5;
     color:#C4CDD5;
+}
+@media screen and (max-width:450px) {
+    .property_collection{
+        display: flex !important;
+        flex-direction: column !important;
+    }
 }

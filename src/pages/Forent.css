@@ -106,5 +106,6 @@
     .property_collection{
         display: flex !important;
         flex-direction: column !important;
+        gap: 15px !important;
     }
 }

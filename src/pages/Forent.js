@@ -1,4 +1,3 @@
-
 import {React,useState, useEffect} from 'react'
 import { FiSearch } from 'react-icons/fi'
 import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io'
@@ -6,23 +5,32 @@ import axios from 'axios'
 import Loader from '../components/Loader'
 import './Forent.css';
 import ReactPagenate from 'react-paginate'
-//import NavBar from '../components/NavBar';
+// eslint-disable-next-line
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 //import properties from '../data'
 import Card from '../components/Card'
 function Forent() {
     const [properties, setProperties] = useState([]);
+    const [propertyType, setPropertyType] = useState('')
+    const [city, setCity] = useState('')
+    const [noOfBedRooms,setNoOfBedrooms] = useState('')
+    const [maxPrice, setMaxPrice] = useState('')
     const url = "https://ict-yep.herokuapp.com/api/v1/properties";
     const [isLoading,setIsLoading] = useState(true)
-useEffect(() => {
-    axios.get(url).then((response) => {
-        setProperties(response.data.data);
+
+    const search = () => {
+        axios.get(url, {data:{filterData:{ propertyType, city, noOfBedRooms, maxPrice }}}).then((response) => {
         if (response.data.data) {
-    //console.log(response.data)
+    console.log(response)
     setProperties(response.data.data)
     setIsLoading(false)
 }
     });
+    }
+useEffect(() => {
+    search()
+    // eslint-disable-next-line
   },[url]);
     // const addZero = (n) => {
     //     return n<10? `0${n}`:n;
@@ -44,7 +52,7 @@ useEffect(() => {
     }
 
     const displayProperties = properties.slice(pagesVisited, pagesVisited + propertyPerPage).map((property) => {
-        return <Card id={property.id} name={property.propertyType} city={property.city} 
+        return <Card id={property._id} name={property.propertyType} city={property.city} 
         image={property.propertyImages[0]} price={property.propertyPrice } date={showDate(property.addedDate)} />
     })
     const pageCount = Math.ceil(properties.length / propertyPerPage)
@@ -58,21 +66,28 @@ useEffect(() => {
         
             <div className="forRent">
                 <div className="search-bar">
-                    <select name="" id="">
-                        <option value="">Property Type</option>
+                    <select name="" id="" onChange={(e)=>setPropertyType(e.target.value)}>
+                        <option value="" >Property Type</option>
+                        <option value="Bungalow" >Bungalow</option>
+                        <option value="Semi-Detached Duplex" >Semi-Detached Duplex</option>
                     </select>
-                     <select name="" id="">
+                     <select name="" id="" onChange={(e)=>setCity(e.target.value)}>
                         <option value="">Location</option>
+                        <option value="Ughelli">Ughelli</option>
+                        <option value="Asaba">Asaba</option>
                     </select>
-                     <select name="" id="">
+                     <select name="" id="" onChange={(e)=>setNoOfBedrooms(e.target.value)}>
                         <option value="">No. of Bedrooms</option>
                     </select>
-                     <select name="" id="">
+                     <select name="" id="" onChange={(e)=>setMaxPrice(e.target.value)}>
                         <option value="">Amount Range</option>
+                        <option value="40000">40000</option>
+                        <option value="800000">800000</option>
+                          <option value="450000">450000</option>
                     </select>
                     
-                    <input type="text" />
-                <span id="search_logo2"><FiSearch /></span>
+                    
+                <button id="search_logo2" onClick={search}><FiSearch /></button>
             
                  
                 </div>

@@ -4,12 +4,11 @@ import 'react-dropzone-uploader/dist/styles.css'
 import Dropzone from 'react-dropzone-uploader'
 import { getDroppedOrSelectedFiles } from 'html5-file-selector'
 
-
-const FileUploadComponent = () => {
+const FileUploadComponent = ({setAllFiles,setFiles}) => {
 
     const selectFileInput = ({ accept, onFiles, files, getFilesFromEvent }) => {
         const textMsg = files.length > 0 ? 'Add More Files' : 'Select Files <image>'
-        console.log(files);
+        // console.log(files);
 
         return (
             <label className="btn_addProperty btn">
@@ -21,6 +20,7 @@ const FileUploadComponent = () => {
                     multiple
                     onChange={e => {
                         getFilesFromEvent(e).then(chosenFiles => {
+                            setAllFiles(chosenFiles)
                             onFiles(chosenFiles)
                         })
                     }}
@@ -40,6 +40,7 @@ const FileUploadComponent = () => {
 
     // const onSubmit = (files, allFiles) => {
     //     allFiles.forEach(f => f.remove())
+    //     console.log(files.map(f => f.meta))
     // }
 
     const getFilesFromEvent = e => {
@@ -49,8 +50,7 @@ const FileUploadComponent = () => {
             })
         })
     }
-
-
+  
     return (
         <Dropzone
             // onSubmit={onSubmit}
@@ -60,10 +60,10 @@ const FileUploadComponent = () => {
             getUploadParams={fileParams}
             
             accept="image/*,audio/*,video/*"
-            maxFiles={10}
+            maxFiles={4}
             inputContent="Drop A File"
             styles={{
-                dropzone: { width: 790, height: 320, borderColor: "#089BC9", borderRadius: "12px", paddingTop: '0px' },
+                dropzone: { width: "100%", height: "320px", borderColor: "#089BC9", borderRadius: "12px", paddingTop: '0px' },
                 dropzoneActive: { borderColor: 'green' },
             }}            
         />

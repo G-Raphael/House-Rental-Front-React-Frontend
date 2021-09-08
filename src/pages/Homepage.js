@@ -1,5 +1,6 @@
 import './Homepage.css';
-//import NavBar from '../components/NavBar';
+// eslint-disable-next-line
+import NavBar from '../components/NavBar';
 import Hero from '../components/Hero';
 import Featured from '../components/Featured';
 import Footer from '../components/Footer';

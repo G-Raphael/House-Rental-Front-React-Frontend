@@ -21,7 +21,7 @@ function NavBar({clickeventUp,clickeventIn}) {
                 </ul>
                 <span  onClick={()=>setisShowNav(!isShowNav)}><FiMenu /></span>
             </div>
-            <ul className={isShowNav?"nav-drawer show ":"nav-drawer"}>
+            <ul id='navdrawer' className={isShowNav?"nav-drawer show ":"nav-drawer"}>
                 <li><button>About us</button></li>
                 <li ><Link to="/properties"><button>For Rent</button></Link></li>
                 <li><button onClick={clickeventIn}>Agents</button></li>

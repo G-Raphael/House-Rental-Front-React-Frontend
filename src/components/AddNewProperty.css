@@ -1,4 +1,7 @@
 /* Form */
+.addproperty{
+  height: 1496px !important;
+}
 .form_container{
   width: 70% !important;
 }
@@ -9,7 +12,7 @@ height: 1296px;
 left: 28%;
 top: 200px;
 background: #FFFFFE;;
-border-radius: 12px;
+border-radius: 0px !important;
 padding: 5%;
 
 /* B2 WEB MEDIUM POPPINS 18 */
@@ -38,21 +41,6 @@ border-radius: 8px;
 .form-label{
   width: 90% !important;
 }
-/* .form-control {
-  display: block;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  } */
   .typeprop{
     /* position: absolute; */
     width: 100% !important;
@@ -223,4 +211,57 @@ text-align: left !important;
 
 
 color: #000000;
+}
+@media screen and (max-width:450px) {
+ .myform{
+   height: 2200px !important;
+ } 
+ .btn_addProperty{
+  position: sticky !important;
+  width: 180px !important;
+  height: 56px !important;
+  left: 538px !important;
+  /* background-image: url('./Pages/image/imageuploadfill.JPG') !important;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  top: 259px !important;
+  border: 1px solid #089BC9 !important;
+  box-sizing: border-box !important;
+  border-radius: 12px !important;
+  font-family: Poppins !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 40px !important;
+  text-align: left !important;
+  /* identical to box height */
+  color: #000000;
+  }
+  .ADD_NEW{
+    position: absolute;
+  width: 60%;
+  height: 56px;
+  left: 5% !important;
+  top: 96.5%;
+  margin-top: 3% !important;
+  margin-left: 35px;
+  border: 0px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  
+  text-transform: uppercase;
+  
+  color: #FFFFFF;
+  
+  
+  /* PRIMARY/BRAND COLOUR */
+  
+  background: #089BC9;
+  border-radius: 12px;
+  }
+  
 }

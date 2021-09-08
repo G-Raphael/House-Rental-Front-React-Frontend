@@ -6,30 +6,21 @@
 }
 
 
-/* .navbarSection{
-    
-} */
+.navbarSection{
+    padding: 0px !important;
+}
 .navbar{
-
     width: 100% !important;
-
-    width: 100%;
-
     height: 7.5rem;
     background-color: #FCFFFE;
     box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.08);
     display: flex;
-
     padding: 2rem 6%;
-
-    padding: 2rem 7.5rem;
-
     align-items: baseline;
     justify-content: space-between;
     position: fixed;
     top: 0px;
     z-index: 999;
-
 }
 .logo{
     margin-bottom: 0.31rem;
@@ -111,7 +102,7 @@
 
 @media screen and (max-width:768px){
     .navbar{
-        padding: 1.75rem 3.13rem;
+        padding: 1.75rem 5.15rem 1.75rem 2.13rem !important;
     }
     .navbar span{
         margin-left: auto;;

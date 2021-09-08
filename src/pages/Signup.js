@@ -22,7 +22,9 @@ const reducer = (state,action) => {
         case 'AGREEMENT_ERROR':
             return {...state,showError:true,errorMessage:'You must agree to terms and condition!'}
         case 'CLOSE_MODAL':
-            return {...state, showError:false}
+            return { ...state, showError: false }
+        case 'EMAIL_EXIST':
+            return {...state,showError:true, errorMessage:'Email already exist!'}
         default:
             return state;
     }
@@ -32,22 +34,31 @@ const defaultState = {
     showError: false,
     errorMessage:''
 }
-
-
+const instance = axios.create(
+{
+        baseURL: "",
+        withCredentials: false,
+        headers: {
+          'Content-Type':'application/json',
+          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',   
+      }
+  } 
+)
 
 function Signup({ showSignUp, clickeventIn, showConfirmation }) {
     // I used http://localhost:9000 for testing, please replace it with our Hiroku address.
-    const url = 'https://ict-yep.herokuapp.com/api/v1/users'
-    //const url = "http://localhost:9000/api/v1/users"
+    const url='https://ict-yep.herokuapp.com/api/v1/users'
+    // const url = "http://localhost:9000/api/v1/users"
    
-    const [showPassword, setShowPassword] = useState(false);
-    const [firstName, setfirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [agreed, setAgreed] = useState(false);
+    const [showPassword, setShowPassword] = useState(false)
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [agreed, setAgreed] = useState(false)
 
  
 
@@ -61,64 +72,57 @@ function Signup({ showSignUp, clickeventIn, showConfirmation }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!firstName || !lastName) {
-            dispatch({ type: 'NAME_ERROR' });
+            dispatch({ type: 'NAME_ERROR' })
         }
         else if (!email) {
-            dispatch({ type: 'NO_EMAIL' });
+            dispatch({ type: 'NO_EMAIL' })
         }
         else if (!email.includes('@') || !email.includes('.')) {
-            dispatch({ type: 'INVALID_EMAIL' });
+            dispatch({ type: 'INVALID_EMAIL' })
         }
         else if (!password || !confirmPassword) {
-            dispatch({ type: 'NO_PASSWORD' });
+            dispatch({ type: 'NO_PASSWORD' })
         }
         else if (password.length < 6) {
-            dispatch({ type: 'INVALID_PASSWORD' });
+            dispatch({ type: 'INVALID_PASSWORD' })
         }
         else if (password !== confirmPassword) {
-            dispatch({ type: 'PASSWORD_MISMATCH' });
+            dispatch({ type: 'PASSWORD_MISMATCH' })
         }
         else if (!agreed) {
-            dispatch({ type: 'AGREEMENT_ERROR' });
+            dispatch({ type: 'AGREEMENT_ERROR' })
         }
         else {
+            
             //function that submits the form data should be inserted here and a response should be requested before showConfirmation
-        const data = {
-            firstName,
-            lastName,
-            phone,
-            email,
-            password,
-            confirmPassword
-        }
-        const instance = axios.create(
-            {
-                    baseURL: "",
-                    withCredentials: false,
-                    headers: {
-                      "Content-Type":"application/json; charset=utf-8; text/plain",
-                      "Access-Control-Allow-Origin" : "*",
-                      "Access-Control-Allow-Methods":"GET,PUT,POST,DELETE,PATCH,OPTIONS",   
-                  }
-                }
-            );
-            const response = await instance.post(url,{data},
-                )
-            console.log(response);
-            console.log(firstName);
-            console.log(lastName);
+            const response = await instance.post(url, {
+                firstName,
+                lastName,
+                phone,
+                email,
+                password,
+                confirmPassword
+            })
+            console.log(response)
 
-            if (response.data.status === 'success') {
+           
                 if (response.data.status === 'success') {
-
+                    setFirstName('')
+                    setLastName('')
+                    setPhone('')
+                    setEmail('')
+                    setPassword('')
+                    setConfirmPassword('')
                     showConfirmation()
                 }
                 else {
+
+                    dispatch({type:'EMAIL_EXIST'})
                     // I am yet to create this modal
                     //showFailure()
                 }
             
-            }
+            
         }
     }
         const closeModal = () => {
@@ -134,12 +138,12 @@ function Signup({ showSignUp, clickeventIn, showConfirmation }) {
                     <div className="form-level">
                         <div className="form-group">
                             <label htmlFor="">First Name</label>
-                            <input type="text" name="firstName" value={firstName} onChange={(e) => setfirstName(e.target.value)} />
+                            <input type="text" name="firstname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                         
                         </div>
                         <div className="form-group">
                             <label htmlFor="">Last Name</label>
-                            <input type="text" name="lastName" value= {lastName} onChange={(e) => setLastName(e.target.value)} />
+                            <input type="text" name="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
                         </div>
                     </div>
                 </div>
@@ -151,7 +155,7 @@ function Signup({ showSignUp, clickeventIn, showConfirmation }) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="">Phone Number</label>
-                            <input type="numbers" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            <input type="text" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
                         </div>
                     </div>
                 </div>
@@ -168,7 +172,7 @@ function Signup({ showSignUp, clickeventIn, showConfirmation }) {
                         <div className="form-group">
                             <label htmlFor="">Confirm Password</label>
                             <div className="password-field">
-                                <input type={showPassword ? "text" : "password"} name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                                <input type="password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                                 <i onClick={show}>{showPassword ? <BsEye /> : <BsEyeSlash />}</i>
                             </div>
                         </div>

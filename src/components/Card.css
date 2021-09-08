@@ -9,10 +9,6 @@
 
     width: 276px;
     height: 429px !important;
-
-    width: 17.25rem;
-    height: 26.81rem;
-
     border-radius: 12px;
 }
 
@@ -49,18 +45,18 @@
 .vert-line{
   border-left:0.06rem solid #C4C4C4;
     height: 1.25rem;
-     margin-right: 1.25rem;
+     margin-right: 0.5rem;
 
 }
 .card-details p{
-    margin-right: 1.25rem;
+    margin-right: 0.5rem;
     font-size: 1.13rem;
     line-height: 1.69rem;
     font-weight: 300;
 }
 .card-details span{
     font-size: 1.13rem;
-    margin-right: 1.25rem;
+    margin-right: 0.25rem;
 }
 .engage-bar{
     display: flex;

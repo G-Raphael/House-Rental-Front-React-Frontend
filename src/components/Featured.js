@@ -1,6 +1,6 @@
 import {React,useEffect,useState} from 'react'
-//import ReactPagenate from 'react-paginate'
-//import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+// import ReactPagenate from 'react-paginate'
+// import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import axios from 'axios'
 import './Featured.css'
 import Card from '../components/Card';
@@ -49,7 +49,7 @@ function Featured() {
         <div className="featured">
             <div className="header">
                 <h4>Featured Rentals</h4>
-                <img src="/assets/customercare.png" alt="" />
+                <img id= 'custormercare' src="/assets/customercare.png" alt="" />
             </div>
             {isLoading&& <Loader />}
             <div className="featured-card">
@@ -57,13 +57,15 @@ function Featured() {
             </div>
             <div className="horzontal-line"></div>
             <div className="download-pointer">
-                <img src="/assets/black-img.png" alt="" />
+                <div classname='bigphoneicon'>
+                <img id ='bigphone'src="/assets/black-img.svg" alt="" />
+                </div>
                 <div className="download">
                     <h2>Download our Mobile Application for free</h2>
-                    <div>
-                        <img src="/assets/google-play.png" alt="google play" />
-                        <img src="/assets/apple-store.png" alt="apple store" />
-                    </div>
+                    <div classname='appdownload'>
+                        <img id ='smallphone'src="/assets/google-play.png" alt="google play" />
+                        <img  id ='smallphone'src="/assets/apple-store.png" alt="apple store" />
+                </div>
                 </div>
             </div>
         </div>

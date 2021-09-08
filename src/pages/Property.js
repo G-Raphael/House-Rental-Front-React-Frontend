@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import './Property.css'
 import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 //import NavbarUser from '../components/NavbarUser'
-import NavBar from '../components/NavBar';
+//import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
 
 
@@ -19,7 +19,8 @@ import Footer from '../components/Footer'
 function Property() {
     const { id } = useParams()
     const [property, setProperty] = useState('')
-    const [user,setUser] = useState('')
+    const [user, setUser] = useState('')
+    const [showPhoneNumber,setShowPhoneNumber]= useState(false)
     console.log(id)
 
     const property_URL = `https://ict-yep.herokuapp.com/api/v1/properties/${id}`
@@ -41,17 +42,19 @@ function Property() {
         
        
     }
-   
+    
     useEffect(() => {
-        
         getProperty()
-        
-       // eslint-disable-next-line  
-    },[id])
+        // eslint-disable-next-line
+    },[])
    //const [isShowMore,setIsShowMore] = useState(false)
+   // eslint-disable-next-line
+    const whatsappLinker = (phoneNumber) => {
+        window.location.href = `https://wa.me/${phoneNumber}`
+    }
     return (
         <div >
-            <NavBar />
+            {/* <NavBar /> */}
             <div className="property">
                
                 <div className="head">
@@ -64,24 +67,21 @@ function Property() {
                     <div>
                     <div className="user-card">
                         <p id="mark"><BsFillBookmarkFill /></p>
-                        <div className="user-details">
-                            <div>
-                        {user&&<img src={user.profileImg} alt="" />}
+                        <div >
+                            <div className="user-details">
+                        {user&&<img src='/assets/avatar.png' alt="" />}
                                     {user&&<p id="user-name">{`${user.firstName} ${user.lastName}`}</p>}
                                 {user&&<p id="user-role">{user.userRole}</p>}
                                 <div className="contact-agnt">
-                                     <button><span><ImPhone /></span> Phone</button>
-                                    <button><span><FiMessageCircle/></span> Message</button>
+                                     <button onClick={()=>setShowPhoneNumber(true)}>{showPhoneNumber?user.phone:<span><ImPhone /> Phone</span>}</button>
+                                    <button ><span><FiMessageCircle/></span> Message</button>
                                 </div>
                        
                         </div>
                         </div>
                         
                     </div>
-                    <div >
-                        <button className="contact-btn" > Request Inspect</button>
-                        <button className="contact-btn">Pay Now </button>
-                        </div>
+                  
                         </div>
                 </div>
                 <div className="img-group">
@@ -108,7 +108,7 @@ function Property() {
                     }}>
                         {property&& property.propertyImages.map((image) => {
                            return <SplideSlide>
-                             {property&& <img src={image} alt="" />}
+                             {property&& <img src={image} alt=""/>}
                         </SplideSlide>
                         })}
                         

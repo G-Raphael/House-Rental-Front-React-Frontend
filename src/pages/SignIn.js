@@ -11,7 +11,7 @@ import './SignIn.css'
 import Modal from '../components/Modal';
 
 
- const url = "http://localhost:9000/api/v1/users/signin"
+ const url = "https://ict-yep.herokuapp.com/api/v1/users/signin"
 const reducer = (state,action) => {
     switch (action.type) {
         case 'ERROR':
@@ -57,10 +57,7 @@ function SignIn({ showSignIn, clickeventUp,setIsShowSigIn }) {
         }
         else {
             try {
-              const headers ={  "Content-Type": "application/json; charset=utf-8; text/plain", 
-              "Access-Control-Allow-Origin" : "*",
-              "Access-Control-Allow-Methods":"GET,PUT,POST,DELETE,PATCH,OPTIONS",}
-               const response = await axios.post(url,{headers:headers}, {
+               const response = await axios.post(url, {
                 email, password
             })
             console.log(response)

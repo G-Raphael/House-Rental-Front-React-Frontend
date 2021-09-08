@@ -12,8 +12,8 @@
     background-color: #FCFFFE;
     box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.08);
     display: flex;
-    padding: 3rem 7.5rem;
-    align-items: baseline;
+    padding: 3rem 6.5rem !important;
+    /* align-items: baseline !important; */
     position: fixed;
     top: 0;
     z-index: 999;
@@ -40,7 +40,7 @@ font-weight: 400;
 outline: none;
 }
 .search_profile{
-    margin-right: 2.63rem;
+    margin-right: 0px !important;
     display: flex;
     align-items: center;
 }
@@ -70,4 +70,24 @@ outline: none;
     line-height: 1.5rem;
     position:relative;
     top:-0.5rem
+}
+@media screen and (max-width:450px){
+    .navbar_user{width: 450px !important;
+        background-color: #FCFFFE !important; 
+        margin: 0px !important;
+        padding: 0px !important;
+    } 
+    .search_profile input{
+        width: 10.75rem;
+        height: 3.5rem;
+        padding-left: 1rem;
+        padding-right: 3rem;
+        border-radius: 0.75rem;
+        border: 1px solid #089BC9;
+        font-size: 1.13rem;
+        line-height: 1.69rem;
+        font-weight: 400;
+        outline: none;
+        margin-right: 15px !important;
+        }
 }

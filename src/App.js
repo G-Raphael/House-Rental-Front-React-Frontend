@@ -24,13 +24,16 @@ import AddNewProperty from './pages/AddNewProperty';
 function App() {
   const [isShowSignUp, setIsShowSignUp] = useState(false)
   const [isShowSigIn, setIsShowSigIn] = useState(false)
-  const [confirmation,setConfirmation] = useState(false)
+  const [confirmation, setConfirmation] = useState(false)
+  // eslint-disable-next-line
+  const [propertyConfirmation,setPropertyConfirmation] = useState(false)
 
 
   const hide = () => {
     setIsShowSignUp(false)
     setIsShowSigIn(false)
     setConfirmation(false)
+    setPropertyConfirmation(false)
   }
    
   const showSignUp = () => {
@@ -47,6 +50,11 @@ function App() {
     setConfirmation(true)
     
   }
+ // eslint-disable-next-line
+  const showPropertyConfirmation = () => {
+    setPropertyConfirmation()
+  }
+
   return (
     <Router>
     <div className="App">

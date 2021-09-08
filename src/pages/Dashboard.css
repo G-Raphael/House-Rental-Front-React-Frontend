@@ -4,8 +4,8 @@
     padding-bottom: 4rem;
     /* display: flex; */
 }
-.dashboard_nav{
-    width: 22.5rem;
+.dashboard_nav{  
+   width: 22.5rem;
    height: 127rem;
    background-color:#089BC9;
    position: fixed;
@@ -43,7 +43,7 @@
     margin-bottom: 10rem;
     
 }
-.dashboard_content>button{
+/* .dashboard_content>button{
     width: 13.06rem;
     height: 3.5rem;
     border-radius: 0.75rem;
@@ -53,8 +53,18 @@
     left: 51.94rem;
     border: none;
     cursor: pointer;
-}
+} */
 .dashboard_content>.Link>button{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+text-transform: capitalize;
+
+color: #FFFFFF;
     width: 13.06rem;
     height: 3.5rem;
     margin-top: 3%;
@@ -71,4 +81,71 @@
      display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    gap: 32px;
+}
+@media screen and (max-width:450px){
+    .dashboard_nav{width: 5.5rem !important;
+        margin: 0px !important;
+    }
+    .dashboard_nav ul{
+        padding-top: 1.44rem;
+        margin-left: 0rem;
+        margin-right: 0px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+
+    }
+    .dashboard_nav ul >li {
+        list-style: none;
+        font-size: 0.73rem;
+        line-height: 1.69rem;
+        font-weight: 600;
+        margin-bottom: 2.31rem;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .dashboard_nav ul >li span{
+        margin-right: 0.25rem;
+    }
+    .dashboardspan1,.dashboardspan2{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .dashboard_content{
+        width: 300px !important;
+        background-color: transparent !important;
+        position: relative;
+        top: 6.5rem;
+        margin-top: 2rem;
+        margin-left: 5.5rem;
+        margin-right: 0rem;
+        padding-left: 0.25rem;
+        margin-bottom: 10rem;
+    }
+    .dashboard{
+        background-color: #E5E5E5 !important;
+        padding-bottom: 4rem;
+        width: 385px !important;
+        /* display: flex; */
+    }
+    .dashboard_content>.Link>button{
+        width: 5.06rem;
+        height: 2.5rem;
+        margin-top: 1%;
+        border-radius: 0.75rem;
+        background-color: #089BC9;
+        color: #fff;
+        position: relative;
+        left: 65%;
+        text-align: center !important;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 17px;
+        padding: 0px !important;
+    }
 }

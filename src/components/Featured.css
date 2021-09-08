@@ -40,53 +40,6 @@
    gap: 1.1%;
    
 }
-
-/* .paginationButtons{
-
-    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
-   gap: 4rem;
-   
-}
-
-.paginationButtons{
-    width: 17.56rem;
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    margin:4rem auto;
-   
-    
-
-} */
-/* .paginationButtons a{
-
-}
-.paginationButtons a{
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  border: 0.06rem solid #DFE3E8;
-    border-radius: 0.25rem;
-    background-color: #fff;
-    cursor:pointer;
-}
-.paginationActive{
-    border: 0.06rem solid #089BC9;
-    color:#089BC9;
-}
-.previousButton,.nextButton{
-    color: #DFE3E8;
-}
-.previousButton:hover,.nextButton:hover{
-    background-color: #919EAB;
-    opacity: 0.5;
-    color:#C4CDD5;
-} */
-
 .horzontal-line{
     border-top: 0.13rem solid #C4C4C4;
     width:100%;
@@ -111,4 +64,47 @@
 .download img{
     margin-top: 2.94rem;
     margin-right: 2.13rem;
+}
+@media screen and (max-width:450px) {
+    .featured-card{
+
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+     }
+     .download-pointer{
+        display: flex;
+        /* flex-direction: column !important; */
+        align-items: center;
+        padding-top: 1rem;
+    }
+    #bigphone{
+        width: 150px !important;
+        height: 300px !important;
+    }
+    .download{
+        margin-left: 1rem;
+
+    }
+    .download h2{
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2rem;
+    }
+    .download img{
+        margin-top: 0.4rem;
+        margin-right: 0.13rem;
+       
+    }
+   #smallphone{
+    width: 250px !important;
+    height: 50px !important;
+   } 
+   .header img{
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.8;
+    position: fixed;
+    right: 5.5rem;
+}
 }

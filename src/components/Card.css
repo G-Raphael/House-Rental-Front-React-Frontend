@@ -45,11 +45,11 @@
 .vert-line{
   border-left:0.06rem solid #C4C4C4;
     height: 1.25rem;
-     margin-right: 0.5rem;
+     margin-right: 1.25rem !important;
 
 }
 .card-details p{
-    margin-right: 0.5rem;
+    margin-right: 1.25rem !important;
     font-size: 1.13rem;
     line-height: 1.69rem;
     font-weight: 300;

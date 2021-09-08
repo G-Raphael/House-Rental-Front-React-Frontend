@@ -1,4 +1,3 @@
-
 import { React, useState, useReducer} from 'react';
 //import { React, useState, useReducer, useEffect } from 'react';
 //import { Redirect,NavLink,Link,useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -87,7 +86,7 @@ function SignIn({ showSignIn, clickeventUp,setIsShowSigIn }) {
             
     
             <div className="form-signin">
-                <div className="form-group ">
+                <div className="form-group">
                 <label htmlFor="">Email Address</label>
                     <input className="large-input" type="email" name="email" value={email} onChange={ (e)=>setEmail(e.target.value)}/>
                     </div>

@@ -95,7 +95,7 @@ function SignIn({ showSignIn, clickeventUp,setIsShowSigIn }) {
                         <label htmlFor="">Password</label>
                         <div className="password-field">
                         <input className="large-input" type={showPassword?"text":"password"} name="password" value={password} onChange={ (e)=>setPassword(e.target.value)}/>
-                            <i onClick={show}>{showPassword?<BsEye />:<BsEyeSlash /> }</i>
+                               <i onClick={show}>{showPassword?<BsEye />:<BsEyeSlash /> }</i>
                         </div>
                        
                 </div>

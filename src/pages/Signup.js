@@ -162,9 +162,9 @@ function Signup({ showSignUp, clickeventIn, showConfirmation }) {
                 <div className="top-level">
                     <div className="form-level">
                         <div className="form-group">
-                            <label htmlFor="">Password</label>
+                            <label id='psw1' htmlFor="">Password</label>
                             <div className="password-field">
-                                <input type={showPassword ? "text" : "password"} name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                <input id='psw1' type={showPassword ? "text" : "password"} name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 <i onClick={show}>{showPassword ? <BsEye /> : <BsEyeSlash />}</i>
                             </div>
                        

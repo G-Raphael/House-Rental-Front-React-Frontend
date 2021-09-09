@@ -1,11 +1,130 @@
 .signin-page{
-   width:33.75rem;
-   height: 35.25rem; 
+    width:33.75rem;
+    height: 35.25rem; 
+    padding-top: 1rem;
+    background-color: #FCFFFE;
+    position: fixed;
+    top: 5rem;
+    left: 33.13rem;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.08);
+     border-radius: 0.5rem;
+     z-index: 1010;
+     display: none;
+ }
+ .show{
+     display: block;
+ }
+ .error{
+     color: red;
+ }
+ 
+ 
+ .signin-page p{
+     text-align: center;
+     font-size: 1.13rem;
+     font-weight: 300;
+     line-height: 1.69rem;
+     
+ }
+ .signin-page #big{
+     font-size: 2.5rem;
+     font-weight: 700;
+     line-height: 3.75rem;
+     margin-top: 0.31rem;
+ }
+ .form-signin{
+     margin: auto;
+ }
+ 
+ .form-group input{
+     
+     height:3.5rem;
+     border: 1px solid #089BC9;
+     border-radius: 0.75rem;
+     outline: none;
+     font-size: 100%;
+ }
+ .large-input{
+     width: 30.25rem !important;
+ }
+ .form-group label{
+     font-size: 1.13rem;
+     font-weight: 500;
+     line-height: 1.69rem;
+ }
+ .form-group >input:focus{
+     border: 2px solid #089BC9;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+     
+ }
+ .password-field{
+     display: flex;
+ }
+ .password-field i{
+     position: relative;
+     font-size: 1.56rem;
+     color: #089BC9;
+     left: -1.8rem;
+     margin-left: -1.95rem;
+     margin-top: 0.3rem;
+     cursor: pointer;
+ }
+ .remember-me input{
+     width: 1.5rem;
+     height: 1.5rem;
+     margin-left: 1.76rem;
+     border: 2px solid #089BC9;
+     border-radius: 0.5rem;
+     background-color:#089BC9; 
+ }
+ .remember-me span{
+     font-size: 1.13rem;
+     font-weight: 500;
+     line-height: 1.69rem;
+     margin-left: 1rem;
+ }
+ .remember-me span a{
+     text-decoration: none;
+     color:#089BC9;
+     margin-left: 7.25rem;
+ }
+ 
+ .signin-btn #btn{
+     width: 23.69rem;
+     height: 3.5rem;
+     background-color: #089BC9;
+     border-radius: 0.5rem;
+     margin-left: 5rem;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+     font-size: 1.13rem;
+     font-weight: 500;
+     line-height: 1.69rem;
+     text-transform: uppercase;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+     
+ }
+ .signin-btn p button{
+     background-color: transparent;
+     border:none;
+     text-decoration: none;
+     color: #089BC9;
+     font-size: 1.13rem;
+     line-height: 2.25rem;
+     cursor: pointer;
+ }
+ 
+ @media screen and (max-width:450px) {
+  .signin-page{
+   width:15.75rem;
+   height: 23.25rem; 
    padding-top: 1rem;
    background-color: #FCFFFE;
    position: fixed;
-   top: 5rem;
-   left:33.13rem;
+   top: 2rem;
+   left: 1rem;
    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.08);
     border-radius: 0.5rem;
     z-index: 1010;
@@ -21,15 +140,15 @@
 
 .signin-page p{
     text-align: center;
-    font-size: 1.13rem;
+    font-size: 0.63rem;
     font-weight: 300;
-    line-height: 1.69rem;
+    line-height: 0.29rem;
     
 }
 .signin-page #big{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 3.75rem;
+    line-height: 1rem;
     margin-top: 0.31rem;
 }
 .form-signin{
@@ -38,19 +157,24 @@
 
 .form-group input{
     
-    height:3.5rem;
+    height:2rem !important;
     border: 1px solid #089BC9;
     border-radius: 0.75rem;
     outline: none;
     font-size: 100%;
+    width: 10.25rem !important;
+    margin-top: 0px !important;
 }
+/* note */
 .large-input{
-    width: 30.25rem !important;
+    width: 10.25rem !important;
 }
 .form-group label{
     font-size: 1.13rem;
     font-weight: 500;
-    line-height: 1.69rem;
+    line-height: 1.14rem !important;
+    margin-top: -10px !important;
+   
 }
 .form-group >input:focus{
     border: 2px solid #089BC9;
@@ -62,42 +186,42 @@
 }
 .password-field i{
     position: relative;
-    font-size: 1.56rem;
+    font-size: 1.06rem;
     color: #089BC9;
     left: -1.8rem;
-    margin-left: -1.95rem;
-    margin-top: 0.3rem;
+    margin-left: -0.25rem;
+    margin-top: 0.2rem;
     cursor: pointer;
 }
 .remember-me input{
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-left: 1.76rem;
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+    margin-left: 0.1rem !important;
     border: 2px solid #089BC9;
     border-radius: 0.5rem;
     background-color:#089BC9; 
 }
 .remember-me span{
-    font-size: 1.13rem;
+    font-size: 0.9rem;
     font-weight: 500;
     line-height: 1.69rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 .remember-me span a{
     text-decoration: none;
     color:#089BC9;
-    margin-left: 7.25rem;
+    margin-left: 5.25rem;
 }
 
 .signin-btn #btn{
-    width: 23.69rem;
-    height: 3.5rem;
+    width: 10rem !important;
+    height: 2.5rem;
     background-color: #089BC9;
     border-radius: 0.5rem;
-    margin-left: 5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 1.13rem;
+    margin-left: 1.7rem;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
     font-weight: 500;
     line-height: 1.69rem;
     text-transform: uppercase;
@@ -114,5 +238,5 @@
     font-size: 1.13rem;
     line-height: 2.25rem;
     cursor: pointer;
-
-}
+} 
+    } 

@@ -4,7 +4,7 @@ import ReactPagenate from 'react-paginate'
 import { FiHome, FiPower } from 'react-icons/fi'
 import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io'
 //import { BsEnvelope } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Dashboard.css'
 import ProfileCard from '../components/ProfileCard'
 import NavbarUser from '../components/NavbarUser'
@@ -21,10 +21,16 @@ const config = {
 
 
 function Dashboard() {
+    const history = useHistory()
     const {id} = useParams()
     const [properties, setProperties] = useState([])
     const [pageNumber, setPageNumber] = useState(0)
     
+    const signOut = () => {
+        localStorage.setItem("authorization", null)
+        localStorage.setItem("userId", null)
+        history.push("/")
+    }
     // delete Property
     const deleteProperty = async (id) => {
         // eslint-disable-next-line
@@ -69,7 +75,7 @@ function Dashboard() {
                 <ul>
                     <li><Link to={`/dashboard/${id}`}><span className='dashboardspan1'><span><FiHome /></span><span> Dashboard</span></span></Link></li>
                     {/* <li><Link><span><BsEnvelope /></span>Client Request</Link></li> */}
-                    <li><Link to="/"><span className='dashboardspan2'><span><FiPower /></span><span>Sign Out</span></span></Link></li>
+                    <li><Link onClick={signOut}><span className='dashboardspan2'><span><FiPower /></span><span>Sign Out</span></span></Link></li>
                 </ul>
             </div>
                 <div className="dashboard_content">

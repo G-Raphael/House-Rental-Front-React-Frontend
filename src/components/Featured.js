@@ -10,10 +10,10 @@ import Loader from './Loader'
 // const url = "http://localhost:9000/api/vi/properties"
 const url = "https://ict-yep.herokuapp.com/api/v1/properties"
 
-function Featured() {
+function Featured({searchedProperties}) {
     const [properties, setProperties] = useState([])
     const [isLoading,setIsLoading] = useState(true)
-
+    console.log(searchedProperties)
     const getData = async() => {
         const response = await axios.get(url)
         

@@ -1,3 +1,4 @@
+import {React,useState} from 'react';
 import './Homepage.css';
 // eslint-disable-next-line
 import NavBar from '../components/NavBar';
@@ -7,11 +8,12 @@ import Footer from '../components/Footer';
 //import Backdrop from '../components/Backdrop';
 //import Signup from './Signup';
 function Homepage() {
+  const [searchedProperties, setSearchedProperties] = useState([])
   return (
     <div className="Home">
       
-      <Hero />
-      <Featured />
+      <Hero setSearchedProperties={ setSearchedProperties}/>
+      <Featured searchedProperties={searchedProperties}/>
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ import { getDroppedOrSelectedFiles } from 'html5-file-selector'
 const FileUploadComponent = ({setAllFiles,setFiles}) => {
 
     const selectFileInput = ({ accept, onFiles, files, getFilesFromEvent }) => {
-        const textMsg = files.length > 0 ? 'Add More Files' : 'Select Files <image>'
+        const textMsg = files.length > 0 ? 'Add More Files' : 'Select 4 Image Files'
         // console.log(files);
 
         return (
@@ -63,7 +63,7 @@ const FileUploadComponent = ({setAllFiles,setFiles}) => {
             maxFiles={4}
             inputContent="Drop A File"
             styles={{
-                dropzone: { width: "100%", height: "320px", borderColor: "#089BC9", borderRadius: "12px", paddingTop: '0px' },
+                dropzone: {  width:"100%", height: "320px", borderColor: "#089BC9", borderRadius: "12px", paddingTop: '0px' },
                 dropzoneActive: { borderColor: 'green' },
             }}            
         />

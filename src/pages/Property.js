@@ -9,8 +9,7 @@ import { FiMessageCircle } from 'react-icons/fi'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import './Property.css'
 import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
-//import NavbarUser from '../components/NavbarUser'
-//import NavBar from '../components/NavBar';
+
 import Footer from '../components/Footer'
 
 
@@ -48,20 +47,18 @@ function Property() {
         // eslint-disable-next-line
     },[])
    //const [isShowMore,setIsShowMore] = useState(false)
-   // eslint-disable-next-line
-    const whatsappLinker = (phoneNumber) => {
-        window.location.href = `https://wa.me/${phoneNumber}`
-    }
+    // const watsappLinker = (phoneNumber) => {
+    //     window.location.href = `https://wa.me/${phoneNumber}`
+    // }
     return (
         <div >
-            {/* <NavBar /> */}
             <div className="property">
                
                 <div className="head">
                     <p>{ property.propertyType}</p>
-                    {property&&<p>{ `₦${property.propertyPrice}`}</p>}
+                    {property&&<p>{ `₦${property.propertyPrice}`}/Year</p>}
                 </div>
-                <p><span><GrLocation /></span>{ property.city}</p>
+                <p><span className="location"><GrLocation /></span>{ property.city}</p>
                 <div className="property-agent">
                     {property && <img src={property.propertyImages[0]} alt="" />}
                     <div>
@@ -108,7 +105,7 @@ function Property() {
                     }}>
                         {property&& property.propertyImages.map((image) => {
                            return <SplideSlide>
-                             {property&& <img src={image} alt=""/>}
+                             {property&& <img src={image} alt="" />}
                         </SplideSlide>
                         })}
                         
@@ -124,7 +121,6 @@ function Property() {
                     {/* <div className="gen-description" >
                         <h3>The Neighborhood</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, dolorum ab ipsam quasi laborum maiores vitae blanditiis saepe quibusdam reprehenderit eligendi, doloribus consectetur repellendus exercitationem? Magnam dicta, reiciendis inventore, enim tempore nulla qui, dolore voluptate aliquid veritatis unde? Quam  dolore libero ex consequatur persplaflflas;farofsafklasflasfsalfalsfksdgasdgaiciatis maxime doloribus repellendus tempora aliquid obcaecati sit ducimus fuga vero, tempore eaque reprehenderit recusandae. Illo ullam deleniti necessitatibus repellendus laudantium dolorem incidunt.</p>
-
                     </div> */}
                 </div>
                 <div className="location-desc">
